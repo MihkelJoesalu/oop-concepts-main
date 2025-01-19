@@ -1,7 +1,11 @@
-class Student {
+const Person = require('./Person');
+
+class Student extends Person {
   constructor(name, age) {
-    this.name = name;
+    super(name);
     this.age = age;
+    this.grades = [];
+    this.id = null;
   }
 
   setId(id) {
@@ -34,4 +38,4 @@ class Student {
   }
 }
 
-export default Student;
+module.exports = Student;

@@ -1,3 +1,6 @@
+const Student = require('./Student');
+const Course = require('./Course');
+
 class School {
   constructor(name) {
     this.name = name;
@@ -13,7 +16,7 @@ class School {
   }
 
   addStudent(student) {
-    if (student.age() >= 7 && student.age() <= 21) {
+    if (student.age >= 7 && student.age <= 21) {
       if (!this.students.some(existingStudent => existingStudent.name === student.name)) {
         student.setId(this.nextStudentId);
         this.nextStudentId++;
@@ -45,4 +48,4 @@ class School {
   }
 }
 
-export default School;
+module.exports = School;

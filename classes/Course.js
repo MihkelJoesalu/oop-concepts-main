@@ -1,3 +1,5 @@
+const Student = require('./Student');
+
 class Course {
   constructor(name) {
     this.name = name;
@@ -26,4 +28,4 @@ class Course {
   
 }
 
-export default Course;
+module.exports = Course;
