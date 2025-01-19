@@ -25,5 +25,24 @@ class School {
   addStudentGrade(student, course, grade) {
     const foundStudent = this.students.find(existingStudent => existingStudent.name === student.name);
     const foundCourse = this.courses.find(existingCourse => existingCourse.name === course.name);
+
+    if (foundStudent && foundCourse) {
+      foundStudent.addGrade(course.name, grade);
+      foundCourse.addGrade(student, grade);
+    }
+  }
+
+  getStudents() {
+    return this.students;
+  }
+
+  getCourses() {
+    return this.courses;
+  }
+
+  getStudentsOrderedByAverageGrade() {
+    return [...this.students].sort((a, b) => b.getAverageGrade() - a.getAverageGrade());
   }
 }
+
+export default School;
